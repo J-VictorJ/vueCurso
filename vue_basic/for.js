@@ -1,0 +1,19 @@
+const v_for = Vue.createApp({
+    data(){
+        return{
+            foods:[
+                'pizza',
+                'Açai',
+                'Cake',
+                'Soup',
+            ],
+            img:[
+                'img.jpg',
+                'img.jpg',
+                'img.jpg',
+                'img.jpg'
+            ],
+        }
+    }
+})
+v_for.mount("#app");

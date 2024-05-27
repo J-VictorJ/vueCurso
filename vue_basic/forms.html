@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        form {
+            border: dashed black 1px;
+            width: 200px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Shopping List</h1>
+    <div id="app">
+        <!--Standard html Form-->
+        <form v-on:submit.prevent="addItem"> <!--Prevent Default-->
+            <p>
+                What do you need?
+                <input type="text" required placeholder="item name.." v-model="itemName">
+            </p>
+            <p>
+                How many?
+                <input type="number" placeholder="number of items.." v-model="itemNumber">
+            </p>
+            <button type="submit">Add item</button>
+        </form>
+
+        <p>Shopping list:</p>
+        <ul>
+            <li v-for="item in shoppingList">
+                {{item.name}}, {{item.number}}
+            </li>
+        </ul>
+    </div>
+    <script src="forms.js"></script>
+</body>
+
+</html>

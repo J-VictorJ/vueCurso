@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        #app {
+            border: dashed black 1px;
+            display: inline-block;
+            padding-bottom: 10px;
+            width: 200px;
+            padding: 20px;
+        }
+
+        #app>button {
+            display: block;
+            margin: auto;
+        }
+
+        #lightDiv {
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+
+        #lightDiv>img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #app>div {
+            width: 200px;
+            height: 80px;
+        }
+
+        #lightDiv>div {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+
+        #app>img {
+            float: right;
+            width: 55%;
+        }
+
+        li:hover {
+            cursor: pointer;
+            background-color: rgb(224, 224, 224);
+        }
+
+        #app>ol {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #app li {
+            padding-left: 6px;
+            border-radius: 5px;
+            width: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!--Onclick-->
+        <div id="lightDiv">
+            <div v-show="lightOn"></div>
+            <img src="img_lightBulb.svg">
+        </div>
+        <button v-on:click=" lightOn =! lightOn; click++">Switch light</button>
+        <p>times this lamp has been toggled: {{click}} </p>
+
+        <!--OnInput-->
+        <input type="text" v-on:input="inputCount++" placeholder="Start Typing">
+        <p>555 we tip: {{inputCount}}</p>
+
+        <!--MouseMove-->
+        <div v-on:mousemove=" colorVal = Math.floor(Math.random()*360) "
+            v-bind:style=" {backgroundColor: 'hsl('+colorVal+',60%,60%)'} "></div>
+        <p><span>backgroundColor: hsl(<strong>{{ colorVal }}</strong>, 80%, 80%)</span></p>
+
+        <!--V-on and v-for-->
+        <img :src="imgUrl">
+        <ol>
+            <li v-for="food in manyFoods" @:click="imgUrl = food.url">
+                {{food.name}}
+            </li>
+        </ol>
+
+    </div>
+    <script src="v-on.js"></script>
+</body>
+
+</html>

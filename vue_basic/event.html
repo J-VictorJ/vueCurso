@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        #app {
+            border: black dashed 1px;
+            width: 200px;
+            padding: 0 20px 20px 20px;
+        }
+
+        #green {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p>Start writing inside the text box to record the key value:</p>
+        <input type="text" v-on:keydown="getKey">
+        <p id="green">{{ keyValue }}</p>
+    </div>
+
+    <div id="keydown">
+        <div>
+            <p>Press crtl + t</p>
+            <textarea cols="30" rows="10" v-on:keydown.ctrl.t="createAlert"></textarea>
+        </div>
+    </div>
+
+    <div id="cliques">
+        <div v-on:click.right.prevent="changeColor" v-bind:style="{ backgroundColor:'hsl('+bgColor+',80%,80%)' }">
+            <p>Press right mouse button here.</p>
+        </div>
+    </div>
+    <script src="event.js"></script>
+</body>
+
+</html>

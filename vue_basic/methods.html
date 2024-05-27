@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>methods</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        #app {
+            border: black dashed 1px;
+            width: 200px;
+            padding: 0 20px 20px 20px;
+        }
+
+        #app>div {
+            width: 140px;
+            height: 60px;
+            background-color: lightgreen;
+            padding: 20px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #position {
+            border: black dashed 1px;
+            width: 200px;
+            padding: 0 20px 20px 20px;
+        }
+
+        #position>div {
+            width: 160px;
+            height: 80px;
+            background-color: lightcoral;
+            padding: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p>click on the box</p>
+        <div @:click="changeText">
+            {{text}}
+        </div>
+    </div>
+
+    <div id="position">
+        <p>Move and move the mouse</p>
+        <div @:mousemove="mousePos">
+            xPos: {{xPos}} <br> yPos: {{yPos}}
+        </div>
+    </div>
+
+    <div id="moose">
+        <p>
+            {{count }}
+        </p>
+        <button @:click="moose(1)">+1</button>
+        <button @:click="moose(5)">+5</button>
+        <button @:click="moose(-1)">-1</button>
+    </div>
+    <script src="methods.js"></script>
+</body>
+
+</html>
