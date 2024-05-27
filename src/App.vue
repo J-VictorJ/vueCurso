@@ -10,8 +10,12 @@
         <h4>{{ x.name }}</h4>
         <p>{{ x.desc }}</p>
       </slot-comp>
-      
     </div>
+    <footer>
+      <slot-comp>
+        <h4>Footer</h4>
+      </slot-comp>
+    </footer>
 </template>
 
 <script>
@@ -34,10 +38,20 @@ export default{
 #wrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
+#wrapper > div {
+  background-color: lightgreen;
+}
 #wrapper img {
   display: block; 
-  margin: auto; 
+  margin: 20% auto 0; 
   width: 60%;
+}
+footer > div {
+  background-color: lightpink;
+}
+h3, h4{
+  text-align: center;
 }
 </style>
