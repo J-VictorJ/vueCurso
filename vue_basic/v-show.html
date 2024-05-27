@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        #app {
+            border: black dashed 1px;
+            width: 200px;
+            padding: 0 20px 20px 20px;
+        }
+
+        #app div {
+            padding: 20px;
+            background-color: lightgreen;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div v-show="showDiv">
+            Is better to use v-show instead "if" in some cases. v-show doesn't create a new element the element it's
+            alredy
+            there and
+            it just control its visibility. If creates(render).
+        </div>
+    </div>
+    <script src="show.js"></script>
+</body>
+
+</html>

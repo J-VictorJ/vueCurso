@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        #app {
+            border: dashed black 1px;
+            width: 130px;
+            padding-left: 20px;
+            font-weight: bold;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p v-if="typewritersInStock > 3">in stock</p>
+        <p v-else-if="typewritersInStock > 0">Very few left</p>
+        <p v-else="typewritersInStock">not in stock</p>
+        <div v-if="text.includes('pizza')">
+            <p>
+                The text includes the word pizza
+            </p>
+        </div>
+        <p v-else>
+            there is no pizza on the text
+            {{text}}
+        </p>
+
+    </div>
+
+    <script src="if.js"></script>
+</body>
+
+</html>
