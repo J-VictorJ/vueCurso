@@ -1,36 +1,25 @@
 
 <template>
-  <h1>To do List</h1>
-  <ul>
-    <todo-item
-    v-for="x in items"
-    :key="x"
-    :item-name="x"
-    style="background-color: lightblue;"/>
-</ul>
-  <input placeholder="Add things to do here" v-model="newItem" @keydown.enter="addItem">
-  <button @click="addItem">Add</button>
+  <h3>
+    Slot in vue
+  </h3>
+  <p>Hello World sent as a content to the slot tag</p>
+  <slot-comp>Hello World</slot-comp>
 </template>
 
 <script>
-export default{
-  data(){
-    return{
-      newItem: '',
-      items: ['Buy apples','Make pizza','Mow the lawn'],
-    }
-  },
-  methods:{
-    addItem(){
-      this.items.push(this.newItem);
-      this.newItem = '';
-    }
-  }
-}
+export default{}
+ 
 </script>
 
 <style>
-ul{
-  width: 150px;
+p{
+  width: 200px;
+}
+#app div {
+  border: dashed black 1px;
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
 }
 </style>
